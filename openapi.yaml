@@ -1,0 +1,97 @@
+openapi: 3.0.4
+info:
+  title: Sales Tax Calculator
+  description: >-
+    Sales Tax Calculator computes the exact sales tax amount for purchases in
+    any US state or ZIP code. Get accurate tax calculations with breakdowns by
+    state, county, city, and special district rates.
+  termsOfService: https://apiverve.com/terms/
+  contact:
+    name: APIVerve Support
+    email: hello@apiverve.com
+    url: https://apiverve.com/contact
+  version: 1.0.0
+externalDocs:
+  description: Learn more about APIVerve
+  url: https://docs.apiverve.com?utm_source=openapi
+servers:
+  - url: https://api.apiverve.com/
+paths:
+  /v1/salestaxcalculator:
+    get:
+      summary: Calculate Sales Tax
+      description: Calculate sales tax for a purchase amount at a specific US location
+      operationId: salestaxcalculator
+      parameters:
+        - name: amount
+          in: query
+          schema:
+            type: number
+          required: true
+          description: Purchase amount to calculate tax on
+          example: 100
+        - name: zip
+          in: query
+          schema:
+            type: string
+          required: true
+          description: Valid US 5-digit ZIP code
+          example: '90210'
+        - name: state
+          in: query
+          schema:
+            type: string
+          required: false
+          description: 2-letter US state code (e.g., CA, NY, TX)
+          example: CA
+      responses:
+        '200':
+          description: Successful Response
+          content:
+            application/json:
+              schema:
+                type: object
+                properties:
+                  status:
+                    type: string
+                    description: status
+                  error:
+                    type: string
+                    description: error
+                  data:
+                    type: object
+                    description: data
+              example:
+                status: ok
+                error: null
+                data:
+                  amount: 100
+                  taxRate: 0.0975
+                  taxRatePercent: 9.75
+                  taxAmount: 9.75
+                  totalAmount: 109.75
+                  zip: '90210'
+                  state: CA
+                  region: Beverly Hills
+                  breakdown:
+                    stateRate: 0.0725
+                    countyRate: 0.0025
+                    cityRate: 0.0125
+                    specialRate: 0.01
+        '401':
+          description: Your request was not authorized, or your API Key was invalid
+        '404':
+          description: Requested resource was not found
+        '500':
+          description: A server error has occurred, try again later
+components:
+  securitySchemes:
+    api_key:
+      type: apiKey
+      name: x-api-key
+      in: header
+security:
+  - api_key: []
+sampleRequest:
+  amount: 100
+  zip: '90210'
