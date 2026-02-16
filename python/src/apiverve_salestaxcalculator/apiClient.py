@@ -23,7 +23,11 @@ class ValidationError(SalestaxcalculatorAPIClientError):
 
 class SalestaxcalculatorAPIClient:
     # Validation rules for parameters (generated from schema)
-    VALIDATION_RULES = {"amount": {"type": "number", "required": True, "min": 0}, "zip": {"type": "string", "required": True, "minLength": 5, "maxLength": 5}, "state": {"type": "string", "required": False, "minLength": 2, "maxLength": 2}}
+    VALIDATION_RULES = {
+        "amount": {"type": "number", "required": True, "min": 0},
+        "zip": {"type": "string", "required": True, "minLength": 5, "maxLength": 5},
+        "state": {"type": "string", "required": False, "minLength": 2, "maxLength": 2}
+    }
 
     # Format validation patterns
     FORMAT_PATTERNS = {
@@ -71,18 +75,10 @@ class SalestaxcalculatorAPIClient:
                 "API key is required. Get your API key at: https://apiverve.com"
             )
 
-        # Check format (alphanumeric, hyphens, and underscores for prefixed keys)
+        # Check format (GUID, prefixed keys like apv_xxx, or alphanumeric)
         if not re.match(r'^[a-zA-Z0-9_-]+$', api_key):
             raise SalestaxcalculatorAPIClientError(
                 "Invalid API key format. API key should only contain letters, numbers, hyphens, and underscores. "
-                "Get your API key at: https://apiverve.com"
-            )
-
-        # Check length (at least 32 characters without hyphens/underscores)
-        trimmed_key = api_key.replace('-', '').replace('_', '')
-        if len(trimmed_key) < 32:
-            raise SalestaxcalculatorAPIClientError(
-                "Invalid API key. API key appears to be too short. "
                 "Get your API key at: https://apiverve.com"
             )
 
