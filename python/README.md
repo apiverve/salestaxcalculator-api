@@ -44,7 +44,11 @@ from apiverve_salestaxcalculator.apiClient import SalestaxcalculatorAPIClient
 # Initialize the client with your APIVerve API key
 api = SalestaxcalculatorAPIClient("[YOUR_API_KEY]")
 
-query = { "amount": 100, "zip": "90210", "state": "CA" }
+query = {
+    "amount": 100,
+    "zip": "90210",
+    "state": "CA"
+}
 
 try:
     # Make the API call
@@ -82,7 +86,11 @@ Using the API client, you can perform requests to the API.
 ###### Define Query
 
 ```python
-query = { "amount": 100, "zip": "90210", "state": "CA" }
+query = {
+    "amount": 100,
+    "zip": "90210",
+    "state": "CA"
+}
 ```
 
 ###### Simple Request
@@ -133,7 +141,11 @@ from apiverve_salestaxcalculator.apiClient import SalestaxcalculatorAPIClient, S
 
 api = SalestaxcalculatorAPIClient("[YOUR_API_KEY]")
 
-query = { "amount": 100, "zip": "90210", "state": "CA" }
+query = {
+    "amount": 100,
+    "zip": "90210",
+    "state": "CA"
+}
 
 try:
     result = api.execute(query)
@@ -154,7 +166,11 @@ from apiverve_salestaxcalculator.apiClient import SalestaxcalculatorAPIClient, S
 
 api = SalestaxcalculatorAPIClient("[YOUR_API_KEY]")
 
-query = { "amount": 100, "zip": "90210", "state": "CA" }
+query = {
+    "amount": 100,
+    "zip": "90210",
+    "state": "CA"
+}
 
 try:
     result = api.execute(query)
@@ -188,7 +204,11 @@ The client supports the context manager protocol for automatic resource cleanup:
 ```python
 from apiverve_salestaxcalculator.apiClient import SalestaxcalculatorAPIClient, SalestaxcalculatorAPIClientError
 
-query = { "amount": 100, "zip": "90210", "state": "CA" }
+query = {
+    "amount": 100,
+    "zip": "90210",
+    "state": "CA"
+}
 
 # Using context manager ensures proper cleanup
 with SalestaxcalculatorAPIClient("[YOUR_API_KEY]") as api:
@@ -214,7 +234,11 @@ from apiverve_salestaxcalculator.apiClient import SalestaxcalculatorAPIClient
 # Enable debug mode
 api = SalestaxcalculatorAPIClient("[YOUR_API_KEY]", debug=True)
 
-query = { "amount": 100, "zip": "90210", "state": "CA" }
+query = {
+    "amount": 100,
+    "zip": "90210",
+    "state": "CA"
+}
 
 # Debug information will be printed to console
 result = api.execute(query)
@@ -229,8 +253,13 @@ from apiverve_salestaxcalculator.apiClient import SalestaxcalculatorAPIClient
 
 api = SalestaxcalculatorAPIClient("[YOUR_API_KEY]")
 
+query = {
+    "amount": 100,
+    "zip": "90210",
+    "state": "CA"
+}
+
 try:
-    query = { "amount": 100, "zip": "90210", "state": "CA" }
     result = api.execute(query)
     print(result)
 finally:
