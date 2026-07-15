@@ -30,7 +30,13 @@ The Sales Tax Calculator API provides a simple, reliable way to integrate sales 
 ```javascript
 async function callSalesTaxCalculatorAPI() {
     try {
-        const response = await fetch('https://api.apiverve.com/v1/salestaxcalculator', {
+        const params = new URLSearchParams({
+            amount: 100,
+            zip: '90210',
+            state: 'CA'
+        });
+
+        const response = await fetch(`https://api.apiverve.com/v1/salestaxcalculator?${params}`, {
             method: 'GET',
             headers: {
                 'x-api-key': 'YOUR_API_KEY_HERE'
@@ -50,7 +56,7 @@ callSalesTaxCalculatorAPI();
 ### Using cURL
 
 ```bash
-curl -X GET "https://api.apiverve.com/v1/salestaxcalculator?param=value" \
+curl -X GET "https://api.apiverve.com/v1/salestaxcalculator?amount=100&zip=90210&state=CA" \
   -H "x-api-key: YOUR_API_KEY_HERE"
 ```
 
@@ -150,7 +156,7 @@ go get github.com/apiverve/salestaxcalculator-api/go
 |---------|---------|
 | **Multi-language SDKs** | Native packages for JavaScript, Python, C#, Go, and Android |
 | **Simple Integration** | Single API key authentication, consistent response format |
-| **Production Ready** | 99.9% uptime, fast response times, used by thousands of developers |
+| **Production Ready** | 99.9% uptime SLA, served from 24 global regions |
 | **Comprehensive Docs** | Full examples, OpenAPI spec, and dedicated support |
 
 ---
@@ -169,7 +175,7 @@ go get github.com/apiverve/salestaxcalculator-api/go
 The Sales Tax Calculator API is commonly used for:
 
 - **Web Applications** - Add sales tax calculator features to your frontend or backend
-- **Mobile Apps** - Native SDKs for iOS and Android development
+- **Mobile Apps** - Native SDKs for Android development
 - **Automation** - Integrate with n8n, Zapier, or custom workflows
 - **SaaS Products** - Enhance your product with sales tax calculator capabilities
 - **Data Pipelines** - Process and analyze data at scale
