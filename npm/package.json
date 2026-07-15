@@ -1,12 +1,12 @@
 {
   "name": "@apiverve/salestaxcalculator",
-  "version": "1.1.14",
+  "version": "1.2.0",
   "description": "Sales Tax Calculator computes the exact sales tax amount for purchases in any US state or ZIP code. Get accurate tax calculations with breakdowns by state, county, city, and special district rates.",
   "main": "index.js",
   "types": "index.d.ts",
   "sideEffects": false,
   "engines": {
-    "node": ">=14.0.0"
+    "node": ">=18.0.0"
   },
   "files": [
     "index.js",
@@ -23,7 +23,7 @@
     "directory": "npm"
   },
   "keywords": [
-    ""
+    "sales tax calculator", "tax calculator api", "us sales tax", "state tax calculator", "zip code tax"
   ],
   "author": {
     "name": "APIVerve",
@@ -41,8 +41,7 @@
     "dotenv": "^16.4.7"
   },
   "dependencies": {
-    "node-fetch": "^3.3.2",
-    "promise": "^8.3.0",
-    "axios": "1.13.2"
+    "axios": "1.13.2",
+    "form-data": "^4.0.1"
   }
 }
