@@ -17,11 +17,14 @@ def call_salestaxcalculator_api():
     Make a GET request to the Sales Tax Calculator API
     """
     try:
+        # Query parameters
+        params &#x3D; {&#x27;amount&#x27;: 100, &#x27;zip&#x27;: &#x27;90210&#x27;, &#x27;state&#x27;: &#x27;CA&#x27;}
+
         headers = {
             'x-api-key': API_KEY
         }
 
-        response = requests.get(API_URL, headers=headers)
+        response = requests.get(API_URL, headers=headers, params=params)
 
         # Raise exception for HTTP errors
         response.raise_for_status()
