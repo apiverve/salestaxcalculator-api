@@ -13,7 +13,14 @@ const API_URL = 'https://api.apiverve.com/v1/salestaxcalculator';
  */
 async function callSalesTaxCalculatorAPI() {
   try {
-    const response = await fetch(API_URL, {
+    // Query parameters
+    const params &#x3D; new URLSearchParams({
+            amount: 100,
+            zip: &#x27;90210&#x27;,
+            state: &#x27;CA&#x27;
+        });
+
+    const response = await fetch(`${API_URL}?${params}`, {
       method: 'GET',
       headers: {
         'x-api-key': API_KEY
