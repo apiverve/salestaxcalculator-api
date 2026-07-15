@@ -4,31 +4,43 @@ declare module '@apiverve/salestaxcalculator' {
     secure?: boolean;
   }
 
+  /**
+   * Describes fields the current plan does not unlock. Locked fields arrive as null
+   * in `data`; `locked_fields` names them, using dot paths for nested fields.
+   * Absent when the plan unlocks everything.
+   */
+  export interface PremiumInfo {
+    message: string;
+    upgrade_url: string;
+    locked_fields: string[];
+  }
+
   export interface salestaxcalculatorResponse {
     status: string;
     error: string | null;
     data: SalesTaxCalculatorData;
     code?: number;
+    premium?: PremiumInfo;
   }
 
 
   interface SalesTaxCalculatorData {
-      amount:         number;
-      taxRate:        number;
-      taxRatePercent: number;
-      taxAmount:      number;
-      totalAmount:    number;
-      zip:            string;
-      state:          string;
-      region:         string;
+      amount:         number | null;
+      taxRate:        number | null;
+      taxRatePercent: number | null;
+      taxAmount:      number | null;
+      totalAmount:    number | null;
+      zip:            null | string;
+      state:          null | string;
+      region:         null | string;
       breakdown:      Breakdown;
   }
   
   interface Breakdown {
-      stateRate:   number;
-      countyRate:  number;
-      cityRate:    number;
-      specialRate: number;
+      stateRate:   number | null;
+      countyRate:  number | null;
+      cityRate:    number | null;
+      specialRate: number | null;
   }
 
   export default class salestaxcalculatorWrapper {
