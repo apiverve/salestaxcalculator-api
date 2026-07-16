@@ -14,7 +14,7 @@ namespace APIVerve.API.SalesTaxCalculator
         /// Purchase amount to calculate tax on
         /// </summary>
         [JsonProperty("amount")]
-        public string Amount { get; set; }
+        public double Amount { get; set; }
 
         /// <summary>
         /// Valid US 5-digit ZIP code
