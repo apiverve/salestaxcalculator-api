@@ -25,27 +25,30 @@ namespace APIVerve.API.SalesTaxCalculator
 
         [JsonProperty("data")]
         public Data Data { get; set; }
+
+        [JsonProperty("premium")]
+        public Premium Premium { get; set; }
     }
 
     public partial class Data
     {
         [JsonProperty("amount")]
-        public long Amount { get; set; }
+        public long? Amount { get; set; }
 
         [JsonProperty("taxRate")]
-        public double TaxRate { get; set; }
+        public double? TaxRate { get; set; }
 
         [JsonProperty("taxRatePercent")]
-        public double TaxRatePercent { get; set; }
+        public double? TaxRatePercent { get; set; }
 
         [JsonProperty("taxAmount")]
-        public double TaxAmount { get; set; }
+        public double? TaxAmount { get; set; }
 
         [JsonProperty("totalAmount")]
-        public double TotalAmount { get; set; }
+        public double? TotalAmount { get; set; }
 
         [JsonProperty("zip")]
-        public long Zip { get; set; }
+        public long? Zip { get; set; }
 
         [JsonProperty("state")]
         public string State { get; set; }
@@ -60,15 +63,27 @@ namespace APIVerve.API.SalesTaxCalculator
     public partial class Breakdown
     {
         [JsonProperty("stateRate")]
-        public double StateRate { get; set; }
+        public double? StateRate { get; set; }
 
         [JsonProperty("countyRate")]
-        public double CountyRate { get; set; }
+        public double? CountyRate { get; set; }
 
         [JsonProperty("cityRate")]
-        public double CityRate { get; set; }
+        public double? CityRate { get; set; }
 
         [JsonProperty("specialRate")]
-        public double SpecialRate { get; set; }
+        public double? SpecialRate { get; set; }
+    }
+
+    public partial class Premium
+    {
+        [JsonProperty("message")]
+        public string Message { get; set; }
+
+        [JsonProperty("upgrade_url")]
+        public Uri UpgradeUrl { get; set; }
+
+        [JsonProperty("locked_fields")]
+        public string[] LockedFields { get; set; }
     }
 }
