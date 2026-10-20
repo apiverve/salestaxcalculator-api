@@ -1,6 +1,6 @@
 import re
-from typing import Dict, Optional, Any
-from dataclasses import dataclass, List
+from typing import Dict, Optional, Any, List
+from dataclasses import dataclass
 import requests
 
 
@@ -25,7 +25,7 @@ class SalestaxcalculatorAPIClient:
     # Validation rules for parameters (generated from schema)
     VALIDATION_RULES = {
         "amount": {"type": "number", "required": True, "min": 0},
-        "zip": {"type": "string", "required": True, "minLength": 5, "maxLength": 5},
+        "zip": {"type": "string", "required": False, "minLength": 5, "maxLength": 5},
         "state": {"type": "string", "required": False, "minLength": 2, "maxLength": 2}
     }
 
