@@ -1,7 +1,7 @@
 {
   "name": "@apiverve/salestaxcalculator",
-  "version": "1.2.0",
-  "description": "Sales Tax Calculator computes the exact sales tax amount for purchases in any US state or ZIP code. Get accurate tax calculations with breakdowns by state, county, city, and special district rates.",
+  "version": "1.2.2",
+  "description": "Sales Tax Calculator is a US sales tax API that computes the exact sales tax amount and combined rate for purchases in any US state or ZIP code. Paid plans add breakdowns by state, county, city, and special district rates.",
   "main": "index.js",
   "types": "index.d.ts",
   "sideEffects": false,
@@ -23,7 +23,7 @@
     "directory": "npm"
   },
   "keywords": [
-    "sales tax calculator", "tax calculator api", "us sales tax", "state tax calculator", "zip code tax"
+    "sales tax api", "us sales tax api", "sales tax calculation api", "sales tax rate api", "tax calculator api"
   ],
   "author": {
     "name": "APIVerve",
@@ -34,7 +34,7 @@
   "bugs": {
     "url": "https://github.com/apiverve/salestaxcalculator-api/issues"
   },
-  "homepage": "https://apiverve.com/marketplace/salestaxcalculator?utm_source=npm&utm_medium=homepage",
+  "homepage": "https://apiverve.com/marketplace/salestaxcalculator?utm_source=npm&utm_medium=referral&utm_content=homepage",
   "devDependencies": {
     "mocha": "^11.0.1",
     "chai": "^5.1.2",

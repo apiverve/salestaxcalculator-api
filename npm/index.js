@@ -30,7 +30,7 @@ class salestaxcalculatorWrapper {
         this.baseURL = 'https://api.apiverve.com/v1/salestaxcalculator';
 
         // Validation rules for parameters (generated from schema)
-        this.validationRules = {"amount":{"type":"number","required":true,"min":0},"zip":{"type":"string","required":true,"minLength":5,"maxLength":5},"state":{"type":"string","required":false,"minLength":2,"maxLength":2}};
+        this.validationRules = {"amount":{"type":"number","required":true,"min":0},"zip":{"type":"string","required":false,"minLength":5,"maxLength":5},"state":{"type":"string","required":false,"minLength":2,"maxLength":2}};
     }
 
     /**
