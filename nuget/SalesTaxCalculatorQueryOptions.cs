@@ -17,13 +17,13 @@ namespace APIVerve.API.SalesTaxCalculator
         public double Amount { get; set; }
 
         /// <summary>
-        /// Valid US 5-digit ZIP code
+        /// Valid US 5-digit ZIP code (required unless state is given)
         /// </summary>
         [JsonProperty("zip")]
         public string Zip { get; set; }
 
         /// <summary>
-        /// 2-letter US state code (e.g., CA, NY, TX)
+        /// 2-letter US state code (e.g., CA, NY, TX); used when zip is not given, state rate only
         /// </summary>
         [JsonProperty("state")]
         public string State { get; set; }

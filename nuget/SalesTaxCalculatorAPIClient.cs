@@ -68,7 +68,7 @@ namespace APIVerve.API.SalesTaxCalculator
         private static readonly Dictionary<string, ValidationRule> _validationRules = new Dictionary<string, ValidationRule>
         {
             { "amount", new ValidationRule { Type = "number", Required = true, Min = 0 } },
-            { "zip", new ValidationRule { Type = "string", Required = true, MinLength = 5, MaxLength = 5 } },
+            { "zip", new ValidationRule { Type = "string", Required = false, MinLength = 5, MaxLength = 5 } },
             { "state", new ValidationRule { Type = "string", Required = false, MinLength = 2, MaxLength = 2 } }
         };
 
