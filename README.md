@@ -1,13 +1,13 @@
-# [Sales Tax Calculator API](https://apiverve.com/marketplace/salestaxcalculator?utm_source&#x3D;github&amp;utm_medium&#x3D;readme)
+# [Sales Tax Calculator API](https://apiverve.com/marketplace/salestaxcalculator?utm_source&#x3D;github&amp;utm_medium&#x3D;referral&amp;utm_content&#x3D;readme)
 
-Sales Tax Calculator computes the exact sales tax amount for purchases in any US state or ZIP code. Get accurate tax calculations with breakdowns by state, county, city, and special district rates.
+Sales Tax Calculator is a US sales tax API that computes the exact sales tax amount and combined rate for purchases in any US state or ZIP code. Paid plans add breakdowns by state, county, city, and special district rates.
 
 The Sales Tax Calculator API provides a simple, reliable way to integrate sales tax calculator functionality into your applications. Built for developers who need production-ready sales tax calculator capabilities without the complexity of building from scratch.
 
-**[View API Details →](https://apiverve.com/marketplace/salestaxcalculator?utm_source&#x3D;github&amp;utm_medium&#x3D;readme)**
+**[View API Details →](https://apiverve.com/marketplace/salestaxcalculator?utm_source&#x3D;github&amp;utm_medium&#x3D;referral&amp;utm_content&#x3D;readme)**
 
 [![License: MIT](https://img.shields.io/badge/License-MIT-yellow.svg)](https://opensource.org/licenses/MIT)
-[![API Status](https://img.shields.io/badge/Status-Active-green.svg)](https://apiverve.com/marketplace/salestaxcalculator?utm_source&#x3D;github&amp;utm_medium&#x3D;readme)
+[![API Status](https://img.shields.io/badge/Status-Active-green.svg)](https://apiverve.com/marketplace/salestaxcalculator?utm_source&#x3D;github&amp;utm_medium&#x3D;referral&amp;utm_content&#x3D;readme)
 [![Method](https://img.shields.io/badge/Method-GET-blue.svg)](#)
 [![Platform](https://img.shields.io/badge/Platform-Multi--Platform-orange.svg)](#installation)
 
@@ -163,7 +163,7 @@ go get github.com/apiverve/salestaxcalculator-api/go
 
 ## Documentation
 
-- 🏠 **API Home:** [Sales Tax Calculator API](https://apiverve.com/marketplace/salestaxcalculator?utm_source&#x3D;github&amp;utm_medium&#x3D;readme)
+- 🏠 **API Home:** [Sales Tax Calculator API](https://apiverve.com/marketplace/salestaxcalculator?utm_source&#x3D;github&amp;utm_medium&#x3D;referral&amp;utm_content&#x3D;readme)
 - 📚 **API Reference:** [docs.apiverve.com/ref/salestaxcalculator](https://docs.apiverve.com/ref/salestaxcalculator)
 - 📖 **OpenAPI Spec:** [openapi.yaml](./openapi.yaml)
 - 💡 **Examples:** [examples/](./examples/)
@@ -193,11 +193,41 @@ x-api-key: YOUR_API_KEY_HERE
 Get your API key: [https://apiverve.com](https://apiverve.com)
 
 ### Response Format
-All responses are JSON with this structure:
+
+Every APIVerve endpoint returns the same envelope — check `status`, then read `data`:
+
 ```json
 {
   "status": "ok",
+  "error": null,
   "data": { ... }
+}
+```
+
+### Example Response
+
+A real response from the Sales Tax Calculator API:
+
+```json
+{
+  "status": "ok",
+  "error": null,
+  "data": {
+    "amount": 100,
+    "taxRate": 0.0975,
+    "taxRatePercent": 9.75,
+    "taxAmount": 9.75,
+    "totalAmount": 109.75,
+    "zip": "90210",
+    "state": "CA",
+    "region": "Beverly Hills",
+    "breakdown": {
+      "stateRate": 0.0725,
+      "countyRate": 0.0025,
+      "cityRate": 0.0125,
+      "specialRate": 0.01
+    }
+  }
 }
 ```
 
@@ -205,7 +235,7 @@ All responses are JSON with this structure:
 
 ## Support & Community
 
-- 🏠 **API Home**: [Sales Tax Calculator API](https://apiverve.com/marketplace/salestaxcalculator?utm_source&#x3D;github&amp;utm_medium&#x3D;readme)
+- 🏠 **API Home**: [Sales Tax Calculator API](https://apiverve.com/marketplace/salestaxcalculator?utm_source&#x3D;github&amp;utm_medium&#x3D;referral&amp;utm_content&#x3D;readme)
 - 💬 **Support**: [https://apiverve.com/contact](https://apiverve.com/contact)
 - 🐛 **Issues**: [GitHub Issues](../../issues)
 - 📖 **Documentation**: [https://docs.apiverve.com](https://docs.apiverve.com)

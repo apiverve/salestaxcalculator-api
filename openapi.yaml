@@ -2,9 +2,9 @@ openapi: 3.0.4
 info:
   title: Sales Tax Calculator
   description: >-
-    Sales Tax Calculator computes the exact sales tax amount for purchases in
-    any US state or ZIP code. Get accurate tax calculations with breakdowns by
-    state, county, city, and special district rates.
+    Sales Tax Calculator is a US sales tax API that computes the exact sales tax
+    amount and combined rate for purchases in any US state or ZIP code. Paid
+    plans add breakdowns by state, county, city, and special district rates.
   termsOfService: https://apiverve.com/terms/
   contact:
     name: APIVerve Support
@@ -19,7 +19,7 @@ servers:
 paths:
   /v1/salestaxcalculator:
     get:
-      summary: Calculate Sales Tax
+      summary: Sales Tax Calculator
       description: Calculate sales tax for a purchase amount at a specific US location
       operationId: salestaxcalculator
       parameters:
@@ -34,15 +34,17 @@ paths:
           in: query
           schema:
             type: string
-          required: true
-          description: Valid US 5-digit ZIP code
+          required: false
+          description: Valid US 5-digit ZIP code (required unless state is given)
           example: '90210'
         - name: state
           in: query
           schema:
             type: string
           required: false
-          description: 2-letter US state code (e.g., CA, NY, TX)
+          description: >-
+            2-letter US state code (e.g., CA, NY, TX); used when zip is not
+            given, state rate only
           example: CA
       responses:
         '200':
