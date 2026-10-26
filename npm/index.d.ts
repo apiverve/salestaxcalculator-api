@@ -41,6 +41,10 @@ declare module '@apiverve/salestaxcalculator' {
       countyRate:  number | null;
       cityRate:    number | null;
       specialRate: number | null;
+      stateTax:    number | null;
+      countyTax:   number | null;
+      cityTax:     number | null;
+      specialTax:  number | null;
   }
 
   export default class salestaxcalculatorWrapper {
