@@ -73,6 +73,18 @@ namespace APIVerve.API.SalesTaxCalculator
 
         [JsonProperty("specialRate")]
         public double? SpecialRate { get; set; }
+
+        [JsonProperty("stateTax")]
+        public long? StateTax { get; set; }
+
+        [JsonProperty("countyTax")]
+        public double? CountyTax { get; set; }
+
+        [JsonProperty("cityTax")]
+        public double? CityTax { get; set; }
+
+        [JsonProperty("specialTax")]
+        public double? SpecialTax { get; set; }
     }
 
     public partial class Premium
