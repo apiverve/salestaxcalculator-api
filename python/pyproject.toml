@@ -1,10 +1,10 @@
 [project]
 name = "apiverve-salestaxcalculator"
-version = "1.2.2"
+version = "1.2.3"
 authors = [
   { name="APIVerve", email="hello@apiverve.com" },
 ]
-description = "Sales Tax Calculator is a US sales tax API that computes the exact sales tax amount and combined rate for purchases in any US state or ZIP code. Paid plans add breakdowns by state, county, city, and special district rates."
+description = "Sales Tax Calculator is a US sales tax calculation API: send an order amount with a ZIP code or state and get the combined rate, the tax amount and the order total back as JSON. Paid plans split both the rate and the tax amount by state, county, city and special district."
 keywords = ["sales tax api", "us sales tax api", "sales tax calculation api", "sales tax rate api", "tax calculator api"]
 readme = "README.md"
 requires-python = ">=3.9"
