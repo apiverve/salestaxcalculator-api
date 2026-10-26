@@ -1,6 +1,6 @@
 # [Sales Tax Calculator API](https://apiverve.com/marketplace/salestaxcalculator?utm_source&#x3D;github&amp;utm_medium&#x3D;referral&amp;utm_content&#x3D;readme)
 
-Sales Tax Calculator is a US sales tax API that computes the exact sales tax amount and combined rate for purchases in any US state or ZIP code. Paid plans add breakdowns by state, county, city, and special district rates.
+Sales Tax Calculator is a US sales tax calculation API: send an order amount with a ZIP code or state and get the combined rate, the tax amount and the order total back as JSON. Paid plans split both the rate and the tax amount by state, county, city and special district.
 
 The Sales Tax Calculator API provides a simple, reliable way to integrate sales tax calculator functionality into your applications. Built for developers who need production-ready sales tax calculator capabilities without the complexity of building from scratch.
 
@@ -214,18 +214,22 @@ A real response from the Sales Tax Calculator API:
   "error": null,
   "data": {
     "amount": 100,
-    "taxRate": 0.0975,
-    "taxRatePercent": 9.75,
-    "taxAmount": 9.75,
-    "totalAmount": 109.75,
+    "taxRate": 0.1025,
+    "taxRatePercent": 10.25,
+    "taxAmount": 10.25,
+    "totalAmount": 110.25,
     "zip": "90210",
     "state": "CA",
-    "region": "Beverly Hills",
+    "region": "WEST HOLLYWOOD TOURISM IMPROVEMENT DISTRICT",
     "breakdown": {
-      "stateRate": 0.0725,
+      "stateRate": 0.06,
       "countyRate": 0.0025,
-      "cityRate": 0.0125,
-      "specialRate": 0.01
+      "cityRate": 0.0075,
+      "specialRate": 0.0325,
+      "stateTax": 6,
+      "countyTax": 0.25,
+      "cityTax": 0.75,
+      "specialTax": 3.25
     }
   }
 }
