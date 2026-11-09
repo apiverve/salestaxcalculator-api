@@ -4,6 +4,6 @@ require_relative "apiverve_salestaxcalculator/client"
 
 module APIVerve
   module Salestaxcalculator
-    VERSION = "1.2.4"
+    VERSION = "1.2.5"
   end
 end
