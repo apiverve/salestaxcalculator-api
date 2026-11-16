@@ -1,0 +1,16 @@
+name: apiverve_salestaxcalculator
+description: "Sales Tax Calculator is a US sales tax calculation API: send an order amount with a ZIP code or state and get the combined rate, the tax amount and the order total back as JSON. Paid plans split both the rate and the tax amount by state, county, city and special district."
+version: 1.2.6
+homepage: https://apiverve.com/marketplace/salestaxcalculator?utm_source=dart&utm_medium=referral&utm_content=homepage
+repository: https://github.com/apiverve/salestaxcalculator-api/tree/main/dart
+
+environment:
+  sdk: '>=3.0.0 <4.0.0'
+
+dependencies:
+  http: ^1.1.0
+  http_parser: ^4.0.0
+
+dev_dependencies:
+  lints: ^3.0.0
+  test: ^1.24.0
