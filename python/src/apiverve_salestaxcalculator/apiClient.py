@@ -24,8 +24,8 @@ class ValidationError(SalestaxcalculatorAPIClientError):
 class SalestaxcalculatorAPIClient:
     # Validation rules for parameters (generated from schema)
     VALIDATION_RULES = {
-        "amount": {"type": "number", "required": True, "min": 0},
-        "zip": {"type": "string", "required": False, "minLength": 5, "maxLength": 5},
+        "amount": {"type": "number", "required": True, "min": 0, "max": 1000000000000},
+        "zip": {"type": "string", "required": False, "minLength": 5, "maxLength": 10},
         "state": {"type": "string", "required": False, "minLength": 2, "maxLength": 2}
     }
 
