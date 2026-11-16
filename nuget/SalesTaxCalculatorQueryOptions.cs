@@ -11,13 +11,13 @@ namespace APIVerve.API.SalesTaxCalculator
     public class SalesTaxCalculatorQueryOptions
     {
         /// <summary>
-        /// Purchase amount to calculate tax on
+        /// Purchase amount to calculate tax on (0 to 1,000,000,000,000)
         /// </summary>
         [JsonProperty("amount")]
         public double Amount { get; set; }
 
         /// <summary>
-        /// Valid US 5-digit ZIP code (required unless state is given)
+        /// Valid US 5-digit ZIP code (required unless state is given). ZIP+4 (64082-1234) is accepted and priced at its 5-digit ZIP. If both zip and state are given, zip wins and state is ignored
         /// </summary>
         [JsonProperty("zip")]
         public string Zip { get; set; }
