@@ -29,14 +29,17 @@ paths:
           schema:
             type: number
           required: true
-          description: Purchase amount to calculate tax on
+          description: Purchase amount to calculate tax on (0 to 1,000,000,000,000)
           example: 100
         - name: zip
           in: query
           schema:
             type: string
           required: false
-          description: Valid US 5-digit ZIP code (required unless state is given)
+          description: >-
+            Valid US 5-digit ZIP code (required unless state is given). ZIP+4
+            (64082-1234) is accepted and priced at its 5-digit ZIP. If both zip
+            and state are given, zip wins and state is ignored
           example: '90210'
         - name: state
           in: query
